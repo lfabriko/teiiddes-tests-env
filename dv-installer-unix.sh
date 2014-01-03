@@ -11,7 +11,7 @@ INSDIR_SED=$(echo $INSDIR | sed 's/\//\\\//g')
 INSTALLATOR=$2
 AUTO_XML=$3
 
-sed "s/<installpath>TMP<\/installpath>/<installpath>${INSDIR_SED}<\/installpath>/" -i $AUTO_XML
+sed "s/<installpath>.<\/installpath>/<installpath>${INSDIR_SED}<\/installpath>/" -i $AUTO_XML
 echo "Set install path in auto.xml"
 
 java -jar $INSTALLATOR $AUTO_XML
